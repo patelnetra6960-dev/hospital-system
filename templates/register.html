@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Register</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<div class="auth-box">
+<h2>🏥 Patient Registration</h2>
+
+<form method="POST">
+Name:<br>
+<input type="text" name="name"><br><br>
+
+Email:<br>
+<input type="email" name="email"><br><br>
+
+Password:<br>
+<input type="password" name="password"><br><br>
+
+Phone:<br>
+<input type="text" name="phone"><br><br>
+
+<button type="submit">Register</button>
+</form>
+
+<br>
+<a href="/login">Back to Login</a>
+</div>
+
+</body>
+</html>
