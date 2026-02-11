@@ -12,18 +12,23 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 # ---------------- MYSQL CONNECTION ----------------
 def get_connection():
-    return pymysql.connect(
-        host='localhost',
-        user='root',
-        password='',
-        database='hospital_db',
-        cursorclass=pymysql.cursors.DictCursor
-    )
+    try:
+        return pymysql.connect(
+            host='localhost',
+            user='root',
+            password='',
+            database='hospital_db',
+            cursorclass=pymysql.cursors.DictCursor
+        )
+    except:
+        return None
+
 
 # ---------------- HOME ----------------
 @app.route('/')
 def home():
     return render_template('login.html')
+
 
 
 # =================================================
@@ -394,6 +399,7 @@ def god_dashboard():
 # ---------------- RUN SERVER ----------------
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)
+
 
 
 
