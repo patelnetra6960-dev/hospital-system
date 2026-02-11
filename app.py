@@ -23,7 +23,8 @@ def get_connection():
 # ---------------- HOME ----------------
 @app.route('/')
 def home():
-    return "Hospital System Running Successfully!"
+    return render_template('login.html')
+
 
 # =================================================
 #                PATIENT PANEL
@@ -393,6 +394,7 @@ def god_dashboard():
 # ---------------- RUN SERVER ----------------
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)
+
 
 
 
