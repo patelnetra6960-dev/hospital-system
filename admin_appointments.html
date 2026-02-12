@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Admin Appointments</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<div class="sidebar">
+<h2>🧑‍⚕️ Admin</h2>
+<a href="/admin_dashboard">Dashboard</a>
+<a href="/admin_appointments">Appointments</a>
+<a href="/logout">Logout</a>
+</div>
+
+<div class="content">
+<h2>All Appointments</h2>
+
+<table border="1" width="100%">
+<tr>
+<th>Patient</th>
+<th>Doctor</th>
+<th>Date</th>
+<th>Time</th>
+<th>Status</th>
+<th>Action</th>
+</tr>
+
+{% for a in data %}
+<tr>
+<td>{{ a.patient }}</td>
+<td>{{ a.doctor }}</td>
+<td>{{ a.appointment_date }}</td>
+<td>{{ a.appointment_time }}</td>
+<td>{{ a.admin_status }}</td>
+<td>
+<a href="/approve/{{ a.appointment_id }}"><button>Approve</button></a>
+<a href="/reject/{{ a.appointment_id }}"><button>Reject</button></a>
+</td>
+</tr>
+{% endfor %}
+</table>
+
+</div>
+
+</body>
+</html>
