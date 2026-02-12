@@ -9,8 +9,7 @@ conn = pymysql.connect(
     user=os.getenv("DB_USER"),
     password=os.getenv("DB_PASS"),
     database=os.getenv("DB_NAME"),
-    port = os.getenv("DB_PORT"),
-    port = int("port") if "port" else 3306,
+    port=int(os.getenv("DB_PORT", "3306")),
 )
 
 
